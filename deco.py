@@ -9,10 +9,19 @@ class Test(object):
         return self.func(*args, **kwargs)
 
 
+def dec(func):
+    def wrapper():
+        print('222')
+        return func()
+
+    return wrapper
+
+
 @Test
+@dec
 def test2():
     pass
 
 
 test2()
-test2()
+# test2()
